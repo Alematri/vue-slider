@@ -22,8 +22,8 @@
           <div class="items-wrapper">
             <div class="item">
               <img :src="posters[counter]">
-              <div class="bottom-right-title">Goku standard form</div>
-              <div class="bottom-right-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magni!</div>
+              <div class="bottom-right-title" v-text="titles[counter]"></div>
+              <div class="bottom-right-text" v-text="lores[counter]"></div>
             </div>
           </div>
 
@@ -31,13 +31,14 @@
             <img
             class="thub"
             v-for="(poster, index) in posters"
+            @click="counter = index"
             :class="{'active': index === counter}"
             :src="poster"
             >
           </div>
 
-          <div class="btn-arrow up">&#9650;</div>
-          <div class="btn-arrow down">&#9660;</div>
+          <div @click="nextPrev(false)" class="btn-arrow up">&#9650;</div>
+          <div @click="nextPrev(true)" class="btn-arrow down">&#9660;</div>
 
         </div>
       </div>
@@ -50,5 +51,3 @@
   <script src="js/script.js"></script>
 </body>
 </html>
-
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore, quae explicabo.
