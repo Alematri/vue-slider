@@ -4,29 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- VUE JS  -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.css' integrity='sha512-bR79Bg78Wmn33N5nvkEyg66hNg+xF/Q8NA8YABbj+4sBngYhv9P8eum19hdjYcY7vXk/vRkhM3v/ZndtgEXRWw==' crossorigin='anonymous'/>
+
   <link rel="stylesheet" href="css/style.css">
   <title>Vue Slider</title>
 </head>
 <body>
+  <div id="app">
 
-  <div class="main-wrapper">
+    <div class="main-wrapper">
 
-    <div class="container">
+      <div class="container">
 
-      <div class="slider">
+        <div class="slider">
 
-        <div class="items-wrapper">
+          <div class="items-wrapper">
+            <div class="item">
+              <img :src="posters[counter]">
+              <div class="bottom-right-title">Goku standard form</div>
+              <div class="bottom-right-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas, magni!</div>
+            </div>
+          </div>
+
+          <div class="thubs-wrapper">
+            <img
+            class="thub"
+            v-for="(poster, index) in posters"
+            :class="{'active': index === counter}"
+            :src="poster"
+            >
+          </div>
+
+          <div class="btn-arrow up">&#9650;</div>
+          <div class="btn-arrow down">&#9660;</div>
+
         </div>
-
-        <div class="thubs-wrapper">
-        </div>
-
-        <div class="btn-arrow up">&#9650;</div>
-        <div class="btn-arrow down">&#9660;</div>
-
       </div>
     </div>
+
   </div>
+
 
     
   <script src="js/script.js"></script>
